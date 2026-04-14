@@ -159,6 +159,20 @@ All outputs must be saved under:
 
 ---
 
+---
+
+## Step 12: Timeline Considerations for Sales Input Documents
+- Verify if the proposed input has timeline information
+- Verify if the proposed timeline is feasible with 360 degree view of the project
+- For the timeline, ask all relevant questions and compile the output, including all associated activities
+- Maintain a 60% buffer for any fixed-scope projects if it is specified in the sales document
+- Ensure that the approach is Time and Materials (T&M) based
+- During the analysis phase, ask for the RACI matrix for clarification
+- Ask questions about the availability and experience of the Business Analyst (BA)
+- Request clarification on requirements definition for both functional and non-functional requirements
+
+---
+
 ## Notes
 - Ignore irrelevant or advertisement content
 - Focus only on meaningful technical and business information
