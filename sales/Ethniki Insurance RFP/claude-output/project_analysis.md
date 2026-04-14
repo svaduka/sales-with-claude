@@ -63,7 +63,7 @@
 | **Scalability** | Secure, governed, scalable, multi-vendor delivery ecosystem |
 | **Reusability** | Build reusable enterprise AI assets to accelerate delivery cycles |
 | **Regulatory Compliance** | GDPR, EU AI Act, DORA obligations |
-| **Deployment Model** | Not explicitly defined (cloud/on-premise decision missing) |
+| **Deployment Model** | **AWS Cloud** (project is AWS-funded - confirmed by user 2026-04-14) |
 
 ---
 
@@ -140,16 +140,95 @@
 
 ---
 
+## AWS Infrastructure Alignment (Confirmed 2026-04-14)
+
+**CRITICAL:** Project is **AWS-funded**, which mandates AWS cloud infrastructure alignment.
+
+### AWS Technology Stack Recommendations
+
+| Component | AWS Service | Purpose | Rationale |
+|-----------|------------|---------|-----------|
+| **IDP/Document Processing** | AWS Textract | OCR, form extraction, table detection | Native AWS service, multilingual support including Greek |
+| **LLM/GenAI** | Amazon Bedrock | Foundation models (Claude, Titan, Llama) | AWS-native, compliance-ready, multi-model support |
+| **RAG Vector Database** | Amazon OpenSearch Service with vector engine | Vector storage and similarity search | Managed AWS service, integrates with Bedrock |
+| **Document Storage** | Amazon S3 + S3 Intelligent-Tiering | Raw and processed document storage | Cost-effective, GDPR-compliant with EU regions |
+| **Data Processing** | AWS Glue / AWS Step Functions | ETL pipelines and orchestration | Serverless, scalable, integrates with Textract |
+| **Real-Time Processing** | Amazon Kinesis Data Streams | Email streaming (5K/day mailroom) | Real-time ingestion and processing |
+| **Integration Layer** | Amazon API Gateway + AWS Lambda | Integration with 9+ existing systems | Serverless, scalable, API management |
+| **Compute** | AWS Lambda + Amazon ECS/Fargate | Application hosting | Serverless-first for cost optimization |
+| **Database** | Amazon RDS (PostgreSQL) + DynamoDB | Structured data and metadata | Managed services, high availability |
+| **ML Model Training** | Amazon SageMaker | Custom model training (Greek NLP) | Full ML lifecycle management |
+| **Monitoring** | Amazon CloudWatch + AWS X-Ray | Logging, monitoring, tracing | Native AWS observability |
+| **Security** | AWS IAM + AWS KMS + AWS Secrets Manager | Access control, encryption, secrets | GDPR/DORA compliance-ready |
+| **Networking** | Amazon VPC + AWS PrivateLink | Secure networking, private connectivity | Data residency and security requirements |
+| **Compliance** | AWS Artifact + AWS Config | Compliance documentation and monitoring | EU AI Act and DORA compliance support |
+
+### AWS Data Residency for GDPR Compliance
+
+**Recommended AWS Region:** `eu-central-1` (Frankfurt, Germany) or `eu-south-1` (Milan, Italy)
+
+**Rationale:**
+- **GDPR Compliance:** Data stays within EU
+- **Greece Proximity:** Low latency to Greece from Frankfurt or Milan
+- **Service Availability:** Full AWS service portfolio available
+- **DORA Compliance:** EU-based operational resilience
+
+**Data Residency Configuration:**
+- S3 buckets: Europe region with encryption at rest (KMS)
+- RDS/DynamoDB: EU region deployment
+- Lambda functions: EU region execution
+- CloudWatch logs: EU region storage with retention policies
+
+### AWS Architecture Benefits
+
+| Benefit | AWS Advantage |
+|---------|--------------|
+| **Cost Optimization** | AWS funding reduces infrastructure costs significantly |
+| **Compliance Ready** | AWS GDPR, EU AI Act, DORA compliance frameworks available |
+| **Scalability** | Serverless architecture scales automatically with document volume |
+| **Integration** | AWS SDK available for all major languages, API Gateway for existing systems |
+| **Security** | AWS IAM fine-grained access control, encryption at rest/transit by default |
+| **Disaster Recovery** | Multi-AZ deployment, automated backups, cross-region replication options |
+| **Greek Language Support** | AWS Textract supports Greek OCR, Bedrock models support multilingual |
+
+### AWS-Specific Capability Gaps
+
+**Previous Gap: "No IDP experience"**
+- **AWS Solution:** AWS Textract provides managed IDP
+- **Mitigation:** Leverage AWS Textract documentation, AWS training, AWS ProServe consultation
+
+**Previous Gap: "No RAG architecture experience"**
+- **AWS Solution:** Amazon Bedrock + OpenSearch vector engine provides managed RAG
+- **Mitigation:** AWS Bedrock workshops, reference architectures available
+
+**Previous Gap: "Greek language processing"**
+- **AWS Solution:** AWS Textract supports Greek OCR; Bedrock models (Claude, etc.) support Greek
+- **Mitigation:** Test Greek accuracy during POC phase; fine-tune if needed with SageMaker
+
+### AWS Cost Implications (Funding Context)
+
+Since project is **AWS-funded**, infrastructure costs are significantly reduced or subsidized:
+
+**Impact on Proposal:**
+- **Lower infrastructure pricing** compared to self-hosted or other clouds
+- **Focus pricing on:** Services, implementation, training, support (not infra cost)
+- **Leverage AWS credits** for development, testing, and pilot phases
+- **Highlight AWS partnership** as competitive advantage
+
+---
+
 ## Critical Success Factors
 
-1. Enterprise AI/RAG Control Plane architecture (LOT A)
-2. GDPR and EU AI Act compliance framework
-3. Integration with 9+ existing systems
-4. Greek language processing capabilities
-5. Turn-key delivery model with all licenses included
-6. Parallel execution capability across LOTs
-7. Real-time processing for customer-facing operations
-8. Governance and compliance controls embedded in platform
+1. **AWS-native architecture** leveraging AWS services (Textract, Bedrock, OpenSearch) - **NEW #1 PRIORITY**
+2. Enterprise AI/RAG Control Plane architecture (LOT A) on AWS
+3. GDPR and EU AI Act compliance framework using AWS compliance tools
+4. Integration with 9+ existing systems via AWS API Gateway
+5. Greek language processing using AWS Textract + Bedrock multilingual models
+6. Turn-key delivery model with AWS licenses and services included
+7. Parallel execution capability across LOTs using AWS orchestration
+8. Real-time processing for customer-facing operations using AWS Kinesis
+9. Governance and compliance controls embedded in platform using AWS Config/CloudTrail
+10. **EU data residency** in AWS Frankfurt or Milan region for GDPR/DORA compliance
 
 ---
 

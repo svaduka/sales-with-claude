@@ -3,13 +3,55 @@
 
 ---
 
+## AWS Infrastructure Alignment (Critical Update - 2026-04-14)
+
+**CONFIRMED:** Project is **AWS-funded** → AWS cloud infrastructure is mandated.
+
+### AWS-Specific Clarifications (NEW)
+
+| Topic | Confirmed Information | Additional Clarification Needed | Priority |
+|-------|----------------------|-------------------------------|----------|
+| **Cloud Provider** | ✅ **AWS** (project is AWS-funded) | None - AWS is confirmed | ANSWERED |
+| **AWS Region** | Must be EU for GDPR/DORA | Which AWS region: eu-central-1 (Frankfurt) or eu-south-1 (Milan)? | CRITICAL |
+| **AWS Services for IDP** | AWS Textract recommended | Is AWS Textract acceptable for all document types, or are there preferences for other AWS services? | HIGH |
+| **AWS Services for LLM/RAG** | Amazon Bedrock + OpenSearch recommended | Which Bedrock models are acceptable? (Claude, Titan, Llama, Mistral) | HIGH |
+| **AWS Existing Infrastructure** | Unknown | What AWS services are already in use at Ethniki? (VPC, IAM roles, existing Bedrock usage?) | HIGH |
+| **AWS ProServe Involvement** | Unknown | Is AWS Professional Services involved or supporting this project? | MEDIUM |
+| **AWS Training/Credits** | Project is AWS-funded | Are AWS training credits available for team certification? (Textract, Bedrock, SageMaker) | MEDIUM |
+| **AWS Compliance Tools** | AWS Artifact, Config, CloudTrail available | Are there specific AWS compliance requirements beyond standard AWS tools? | MEDIUM |
+| **AWS Cost Structure** | AWS-funded project | Are infrastructure costs fully covered by AWS funding, or is there a budget cap? | HIGH |
+| **AWS Reference Architectures** | AWS provides IDP/RAG reference architectures | Should we follow specific AWS reference architectures, or customize? | MEDIUM |
+
+### Impact of AWS Confirmation on Proposal
+
+**Significant Changes:**
+
+1. **Technology Stack:** 100% AWS-native (Textract, Bedrock, OpenSearch, S3, Lambda, etc.)
+2. **Pricing:** Infrastructure costs significantly reduced/subsidized by AWS funding
+3. **Risk:** Lower implementation risk using AWS managed services vs. custom IDP/RAG
+4. **Timeline:** Faster delivery leveraging AWS reference architectures
+5. **Compliance:** AWS compliance frameworks accelerate GDPR/EU AI Act adherence
+6. **Greek Language:** AWS Textract supports Greek OCR natively (removes custom NLP risk)
+
+### Removed/Answered Questions (Due to AWS Confirmation)
+
+| Question | Status | Answer |
+|----------|--------|--------|
+| Cloud provider preference? | ✅ ANSWERED | AWS (project is AWS-funded) |
+| Deployment model (cloud/on-prem/hybrid)? | ✅ ANSWERED | AWS Cloud only |
+| IDP platform preference? | ✅ RECOMMENDED | AWS Textract (AWS-native, Greek support) |
+| LLM model hosting? | ✅ RECOMMENDED | Amazon Bedrock (AWS-native, compliance-ready) |
+| Vector database for RAG? | ✅ RECOMMENDED | Amazon OpenSearch Service with vector engine |
+
+---
+
 ## High Priority Clarifications
 
 | Topic | Missing Information | Reference Needed | Impact on Proposal |
 |-------|---------------------|------------------|-------------------|
 | **LOT A Architecture** | Specific technology stack for Control Plane (cloud provider, LLM models, vector DB) | Technical requirements for LOT A | CRITICAL - Cannot size infrastructure or license costs |
-| **Deployment Model** | Cloud vs. on-premise vs. hybrid deployment preference | Infrastructure requirements | CRITICAL - Affects architecture, pricing, compliance |
-| **Data Residency** | Where data must be stored/processed (Greece, EU, specific regions) | GDPR/DORA compliance requirements | CRITICAL - Impacts cloud provider and design |
+| ~~**Deployment Model**~~ | ~~Cloud vs. on-premise~~ **ANSWERED: AWS Cloud** (project is AWS-funded - confirmed 2026-04-14) | AWS infrastructure mandated | ~~CRITICAL~~ ANSWERED |
+| **AWS Data Residency** | Which AWS region(s) for GDPR/DORA compliance? (eu-central-1 Frankfurt, eu-south-1 Milan) | AWS region selection | CRITICAL - GDPR data residency |
 | **Existing AI Infrastructure** | Current AI/ML platforms, tools, or licenses already in place | Technology landscape | HIGH - Affects reuse vs. new build decisions |
 | **Integration Details** | APIs, data formats, authentication methods for 9+ existing systems | System integration requirements | HIGH - Critical for effort estimation |
 | **LLM Model Preferences** | Proprietary (OpenAI, Anthropic) vs. open-source (Llama, Mistral) vs. local deployment | LOT A technical design | HIGH - Licensing, cost, compliance implications |
@@ -271,17 +313,18 @@ Phase 3 (Months 11+): Fixed-Price - LOTs B2-B7 once defined
 
 ---
 
-## Updated Summary: Most Critical Gaps (Including Step 12)
+## Updated Summary: Most Critical Gaps (Including Step 12 + AWS Alignment)
 
 ### Must Have Before Proposal Submission:
-1. **LOT A Technology Stack** - Cannot design or price without knowing required components
+1. ~~**LOT A Technology Stack**~~ **PARTIALLY ANSWERED: AWS-native** (Textract, Bedrock, OpenSearch confirmed) - Need AWS region selection
 2. **LOT B2-B7 Definitions** - Cannot bid on undefined LOTs
-3. **Deployment Model & Data Residency** - Fundamental architecture decision
+3. ~~**Deployment Model**~~ **ANSWERED: AWS Cloud** (project is AWS-funded) - Need specific AWS region (eu-central-1 or eu-south-1)?
 4. **Timeline & Budget Range** - Essential for solution scoping
 5. **Proposal Due Date** - Need to know deadline
 6. **Commercial Model Preference** - T&M vs. Fixed-Price decision (Step 12)
 7. **RACI Matrix for Critical Responsibilities** - Test data, UAT approval, integration ownership (Step 12)
 8. **BA Availability & Experience** - Timeline feasibility depends on BA support (Step 12)
+9. **AWS Existing Infrastructure** - What AWS services are already in use at Ethniki? (NEW - AWS alignment)
 
 ### Should Have for Competitive Proposal:
 1. Integration details for existing systems

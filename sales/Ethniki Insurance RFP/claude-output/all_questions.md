@@ -7,26 +7,32 @@
 
 ## Architecture Capability Questions
 
+**NOTE:** Project is **AWS-funded** (confirmed 2026-04-14), so AWS infrastructure is mandated.
+
 | Question ID | Question | Purpose | Priority |
 |-------------|----------|---------|----------|
-| ARCH-001 | What is the preferred cloud provider for LOT A Control Plane deployment (AWS, Azure, GCP, multi-cloud)? | Architectural design foundation | CRITICAL |
-| ARCH-002 | What is the target architecture pattern for the Enterprise AI/RAG Control Plane? (e.g., microservices, serverless, container-based) | Design approach | HIGH |
-| ARCH-003 | What are the scalability requirements for the Control Plane? (concurrent users, requests/second, document volume) | Infrastructure sizing | HIGH |
-| ARCH-004 | Should the architecture support multi-tenancy or is it single-tenant for Ethniki only? | Architecture pattern | MEDIUM |
-| ARCH-005 | What are the disaster recovery requirements? (RPO, RTO, multi-region deployment) | Resilience design | HIGH |
-| ARCH-006 | How should the architecture handle integration with the 9+ existing systems? (API gateway, ESB, point-to-point) | Integration pattern | HIGH |
-| ARCH-007 | What is the data flow architecture between LOT A and LOTs B1-B7? | Inter-LOT design | HIGH |
-| ARCH-008 | What monitoring and observability tools are required or preferred? | Operational architecture | MEDIUM |
-| ARCH-009 | Should the architecture support hybrid cloud or must it be fully cloud-based? | Deployment flexibility | HIGH |
-| ARCH-010 | What network architecture constraints exist? (VPN, private endpoints, egress restrictions) | Network design | MEDIUM |
+| ARCH-001 | ~~What is the preferred cloud provider?~~ **ANSWERED: AWS** (project is AWS-funded) | Architectural design foundation | ~~CRITICAL~~ ANSWERED |
+| ARCH-002 | What is the target AWS architecture pattern for the Enterprise AI/RAG Control Plane? (serverless with Lambda/Fargate, ECS/EKS containers, hybrid) | AWS design approach | HIGH |
+| ARCH-003 | What are the scalability requirements for the Control Plane? (concurrent users, requests/second, document volume) | AWS infrastructure sizing | HIGH |
+| ARCH-004 | Should the architecture support multi-tenancy or is it single-tenant for Ethniki only? | AWS architecture pattern | MEDIUM |
+| ARCH-005 | What are the disaster recovery requirements? (RPO, RTO, multi-AZ, cross-region) | AWS resilience design | HIGH |
+| ARCH-006 | Should we use AWS API Gateway for integration with the 9+ existing systems, or other AWS integration services? | AWS integration pattern | HIGH |
+| ARCH-007 | What is the data flow architecture between LOT A and LOTs B1-B7 using AWS services? | Inter-LOT AWS design | HIGH |
+| ARCH-008 | Should we use Amazon CloudWatch + AWS X-Ray for monitoring, or are there other AWS observability requirements? | AWS operational architecture | MEDIUM |
+| ARCH-009 | ~~Hybrid cloud?~~ **ANSWERED: AWS only** (project is AWS-funded) | AWS deployment | ~~HIGH~~ ANSWERED |
+| ARCH-010 | What AWS network architecture is required? (VPC design, AWS PrivateLink, Direct Connect, VPN, egress restrictions) | AWS network design | HIGH |
+| ARCH-011 | Which AWS region(s) should be used? (eu-central-1 Frankfurt, eu-south-1 Milan for GDPR/data residency) | AWS data residency | CRITICAL |
+| ARCH-012 | What AWS services are already in use at Ethniki that we should integrate with or reuse? | AWS service reuse | MEDIUM |
 
 ## AI & Innovation Capability Questions
 
+**NOTE:** Project is **AWS-funded**, so AWS AI services are recommended (Bedrock, Textract, SageMaker).
+
 | Question ID | Question | Purpose | Priority |
 |-------------|----------|---------|----------|
-| AI-001 | What LLM models are preferred or required? (GPT-4, Claude, open-source models like Llama/Mistral, proprietary Greek models) | Model selection | CRITICAL |
-| AI-002 | Should AI models be hosted on Ethniki infrastructure or can external APIs be used? (OpenAI API, Anthropic API, etc.) | Deployment model | CRITICAL |
-| AI-003 | What vector database is preferred for RAG implementation? (Pinecone, Weaviate, Milvus, Qdrant, pgvector) | RAG architecture | HIGH |
+| AI-001 | Which Amazon Bedrock foundation models are preferred? (Claude, Titan, Llama, Mistral, or custom via SageMaker) | AWS model selection | CRITICAL |
+| AI-002 | ~~External APIs?~~ **RECOMMENDED: Amazon Bedrock** (AWS-native, compliance-ready) | AWS deployment model | ~~CRITICAL~~ RECOMMENDED |
+| AI-003 | Should we use Amazon OpenSearch Service with vector engine for RAG, or Amazon RDS with pgvector? | AWS RAG architecture | HIGH |
 | AI-004 | What are the accuracy requirements for document extraction? (e.g., 95% accuracy, 99% for financial data) | Quality targets | HIGH |
 | AI-005 | Should the solution include AI model training/fine-tuning or only use pre-trained models? | AI development scope | HIGH |
 | AI-006 | What AI explainability level is required to meet EU AI Act requirements? | Compliance design | HIGH |
@@ -37,12 +43,14 @@
 
 ## Data Engineering & Lead Engineer Capability Questions
 
+**NOTE:** Project is **AWS-funded**, so AWS data services are recommended (Textract, S3, Glue, Step Functions).
+
 | Question ID | Question | Purpose | Priority |
 |-------------|----------|---------|----------|
-| ENG-001 | What IDP (Intelligent Document Processing) platform is preferred? (UiPath Document Understanding, Abbyy FlexiCapture, Azure Form Recognizer, AWS Textract, other) | Tool selection | CRITICAL |
-| ENG-002 | What data storage solution should be used for processed documents? (Data lake, S3, Azure Blob, database, document DB) | Data storage design | HIGH |
-| ENG-003 | What is the expected document processing latency? (real-time, near real-time < 1 min, batch processing) | Performance target | HIGH |
-| ENG-004 | What data pipeline orchestration tool is preferred? (Airflow, Databricks Workflows, Azure Data Factory, AWS Step Functions) | Orchestration choice | MEDIUM |
+| ENG-001 | ~~IDP platform choice?~~ **RECOMMENDED: AWS Textract** (AWS-native, supports Greek OCR) | AWS tool selection | ~~CRITICAL~~ RECOMMENDED |
+| ENG-002 | Should we use Amazon S3 with S3 Intelligent-Tiering for document storage, or other AWS storage services? | AWS storage design | HIGH |
+| ENG-003 | What is the expected document processing latency? (real-time via Lambda, near real-time < 1 min, batch with Step Functions) | AWS performance target | HIGH |
+| ENG-004 | Should we use AWS Step Functions or AWS Glue Workflows for pipeline orchestration? | AWS orchestration choice | MEDIUM |
 | ENG-005 | What are the data retention requirements for processed documents and AI outputs? | Data lifecycle | MEDIUM |
 | ENG-006 | Should the solution include automated data quality checks and validation? | Quality assurance | HIGH |
 | ENG-007 | What is the expected document ingestion volume per hour/day for each use case? | Capacity planning | HIGH |
