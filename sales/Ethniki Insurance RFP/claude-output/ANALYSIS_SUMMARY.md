@@ -18,6 +18,7 @@
 ✅ **Step 7: Domain-Specific Questions** - COMPLETE
 ✅ **Step 8: Learning Identification** - COMPLETE
 ✅ **Step 9: Output File Generation** - COMPLETE
+✅ **Step 12: Timeline & Project Management Considerations** - COMPLETE (Added 2026-04-14)
 
 ---
 
@@ -114,11 +115,21 @@
 - Greek Language: 10 (Greek OCR, NLP, localization)
 - Security/Privacy: 10 (PII types, encryption, audit logging)
 
-**Priority Breakdown:**
-- CRITICAL: 22 questions
-- HIGH: 101 questions
-- MEDIUM: 62 questions
-- LOW: 15 questions
+### Step 12: Timeline & Project Management Questions: 46 (Added 2026-04-14)
+- Timeline Feasibility Assessment: 8 (phase breakdown, resource assumptions, dependencies)
+- Commercial Model (T&M vs Fixed-Price): 5 (contract type, buffer acceptance, hybrid model)
+- RACI Matrix Clarifications: 10 (test data, UAT approval, integration ownership, support model)
+- Business Analyst Availability: 8 (BA assignment, time commitment, experience, authority)
+- Functional/Non-Functional Requirements: 10 (performance, accuracy, availability, security)
+- Project Management (existing): 5 (from PM capability questions)
+
+**Total Questions: 236** (previously 190)
+
+**Priority Breakdown (Updated):**
+- CRITICAL: 35 questions (+13 from Step 12)
+- HIGH: 130 questions (+29 from Step 12)
+- MEDIUM: 66 questions (+4 from Step 12)
+- LOW: 15 questions (unchanged)
 
 ---
 
@@ -130,6 +141,9 @@
 3. **Deployment Model & Data Residency** - Fundamental architecture decision
 4. **Timeline & Budget Range** - Essential for solution scoping
 5. **Proposal Due Date** - Need deadline
+6. **Commercial Model Preference (T&M vs Fixed-Price)** - Drives proposal structure (Step 12)
+7. **RACI Matrix for Critical Responsibilities** - Test data, UAT approval, integration ownership (Step 12)
+8. **BA Availability & Experience** - Timeline feasibility depends on BA support (Step 12)
 
 ### Should Have for Competitive Proposal:
 1. Integration details for 9+ existing systems
@@ -137,6 +151,103 @@
 3. Evaluation criteria and weighting
 4. Greek language processing expectations
 5. Pilot/POC phase expectations
+6. **Functional/Non-Functional Requirements** - Performance, accuracy, availability targets (Step 12)
+7. **60% Timeline Buffer Acceptability** - For fixed-price risk management (Step 12)
+
+---
+
+## Step 12: Timeline & Project Management Analysis (Added 2026-04-14)
+
+### Timeline Feasibility Assessment
+
+**Key Finding: Stated timelines are significantly understated for fixed-price delivery.**
+
+| Use Case | Stated | Realistic (No Buffer) | With 60% Buffer | Assessment |
+|----------|--------|----------------------|----------------|------------|
+| CPCU1: Geocoding | 1 month | 4-5 weeks | **7 weeks** | ⚠️ Aggressive but achievable |
+| CPCU2: Mailroom | 3 months | 17 weeks (4.25 months) | **6-7 months** | ❌ Significantly understated |
+| CPCU3: Pricing | 3 months | 20 weeks (5 months) | **7-8 months** | ❌ Major understatement |
+| CPCU4: Tender Intel | Not stated | 16-18 weeks | **6-7 months** | 🔍 Needs definition |
+| CPCU5: Contract Gen | Not stated | 12-14 weeks | **5 months** | 🔍 Needs definition |
+| LOT A: Control Plane | Not stated | 24-28 weeks | **10-12 months** | 🔍 Critical; cannot rush |
+
+### Commercial Model Recommendation
+
+**Strong Recommendation: Time & Materials (T&M)**
+
+**Rationale:**
+1. ❌ **Undefined Scope:** LOTs B2-B7 not defined (cannot price unknowns)
+2. ❌ **Integration Uncertainty:** 9+ system APIs not documented
+3. ❌ **AI/IDP Complexity:** Accuracy depends on document quality (not validated)
+4. ❌ **Greek Language Risk:** Greek NLP maturity unclear
+5. ❌ **Regulatory Evolution:** EU AI Act implementation emerging
+6. ❌ **Timeline Ambiguity:** Phase scope unclear (dev only vs. full delivery)
+
+**Alternative: Hybrid Model (Recommended)**
+- **Phase 1 (4-6 months):** T&M for discovery, LOT A design, CPCU1 pilot
+- **Phase 2 (6-12 months):** Fixed-price with 60% buffer for defined use cases
+- **Phase 3 (12+ months):** Fixed-price per LOT once LOTs B2-B7 defined
+
+### RACI Matrix Critical Gaps
+
+**Must Clarify Before Proposal:**
+
+| Responsibility | Current Gap | Impact |
+|---------------|-------------|--------|
+| **Test Data Provision** | Who provides? | Cannot estimate testing effort |
+| **UAT Sign-Off** | Who approves go-live? | Approval delays risk |
+| **Integration Ownership** | Vendor or Ethniki IT? | Effort estimation depends on this |
+| **Production Support** | 24/7 vendor, Ethniki IT, hybrid? | Cost varies 3x between models |
+| **Data Quality Validation** | IDP accuracy or business validation? | Acceptance criteria unclear |
+
+**Recommendation:** Conduct RACI workshop Week 1-2 post-contract award.
+
+### Business Analyst (BA) Requirements
+
+**BA Criticality:** Timeline feasibility **depends heavily** on BA availability.
+
+| BA Factor | Impact on Timeline |
+|-----------|-------------------|
+| Part-time or ad-hoc BA | +25-50% timeline increase |
+| BA new to AI/IDP | +15-30% for knowledge transfer |
+| BA advisory only (no decision authority) | +20-40% for decision delays |
+
+**Recommendation:**
+- If Ethniki cannot provide dedicated full-time BA: **Vendor includes BA services** (T&M basis)
+- **Critical questions:** BA assignment, time commitment, AI/IDP experience, decision authority
+
+### Functional vs. Non-Functional Requirements (NFR) Gaps
+
+**Critical NFR Gaps:**
+
+| NFR Category | Missing | Impact |
+|-------------|---------|--------|
+| **Performance** | Latency targets (< 2 sec? < 5 sec?) | Cannot size infrastructure |
+| **Accuracy** | OCR/extraction thresholds (95%? 98%?) | Cannot commit to SLA |
+| **Availability** | Uptime requirements (99.9%? 99.5%?) | Architecture design affected |
+| **Security** | Encryption standards, MFA requirements | Compliance scope undefined |
+| **Scalability** | 3-year growth, peak load handling | Infrastructure planning blocked |
+
+**Recommendation:** Include **NFR definition workshop** (2-3 weeks, T&M) in Phase 1.
+
+### Timeline Risk Factors
+
+| Risk Factor | Timeline Impact | Mitigation |
+|------------|----------------|------------|
+| Greek Language Processing | +20-40% | Validate existing models; POC phase |
+| 9+ System Integration | +30-50% | API docs upfront; integration discovery |
+| BA/SME Part-Time Availability | +25-50% | Secure dedicated BA or vendor provides |
+| Document Quality Unknown | +15-30% | Request samples; set accuracy tiers |
+| UAT Resource Allocation | +15-25% | Define UAT plan and resource commitment |
+
+### Overall Program Timeline (Phased Approach - Recommended)
+
+- **Phase 1 (Discovery + LOT A):** 4-6 months
+- **Phase 2 (CPCU1, CPCU2 parallel):** 6-8 months
+- **Phase 3 (CPCU3, CPCU4, CPCU5):** 8-12 months
+- **Total: 18-26 months** (vs. 9-12 months if stated timelines used)
+
+**60% Buffer Justification:** Industry standard for AI/IDP projects with unknowns (integration uncertainty, Greek NLP, document quality, regulatory compliance).
 
 ---
 

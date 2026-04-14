@@ -136,3 +136,165 @@
 3. IP and licensing model details
 4. Compliance validation process
 5. Exit strategy requirements
+
+---
+
+## Step 12: Timeline & Project Management Clarifications (Added 2026-04-14)
+
+### Timeline Feasibility & Buffer Management
+
+| Topic | Current Understanding | Missing Information | Recommended Approach |
+|-------|----------------------|---------------------|---------------------|
+| **Timeline Scope Definition** | CPCU1: 1 month, CPCU2/3: 3 months stated | Do timelines include analysis, dev, testing, UAT, training, go-live support? Or just development? | **CRITICAL:** Request timeline breakdown by phase to validate feasibility |
+| **60% Contingency Buffer** | No buffer mentioned in RFP | For fixed-price AI/IDP projects, is 60% contingency acceptable? (CPCU2: 3 months → 5 months with buffer) | **HIGH:** Propose buffered timelines with rationale: AI uncertainty, integration complexity, Greek NLP risk |
+| **Resource Availability Assumptions** | Not specified | Are timelines based on dedicated full-time team or shared resources? | **HIGH:** Clarify team availability assumptions (vendor + Ethniki BA/SMEs) |
+| **Critical Path Dependencies** | LOT A must support LOTs B | What is minimum LOT A completion required before LOT B can start? Can LOT B development begin before LOT A is fully complete? | **CRITICAL:** Understand parallel vs. sequential constraints |
+| **Pilot/POC Timing** | Not mentioned in RFP | Is pilot/POC included in stated timelines or separate phase? | **MEDIUM:** Propose pilot phase (4-6 weeks) before full implementation |
+
+### Commercial Model: T&M vs. Fixed-Price
+
+| Risk Factor | Impact on Fixed-Price | Recommendation |
+|------------|----------------------|----------------|
+| **Undefined LOTs B2-B7** | Cannot price undefined scope | **Recommend T&M** for discovery + LOT A; Fixed-price for defined use cases after discovery |
+| **Integration Uncertainty (9+ systems)** | Unknown API availability, data formats, auth methods | 60% buffer required if fixed-price; prefer T&M for integration workstreams |
+| **Greek NLP Maturity** | May require custom model training/fine-tuning | Cannot commit to accuracy SLAs without POC; T&M for Greek NLP development |
+| **Document Quality Unknown** | OCR/IDP accuracy depends on scan quality, not validated | Propose accuracy tiers with T&M for achieving higher tiers |
+| **EU AI Act Implementation** | Regulatory requirements still evolving | Compliance effort unpredictable; prefer T&M for regulatory adaptation |
+
+**Recommended Commercial Model:**
+```
+Phase 1 (Months 1-4): T&M - Discovery, LOT A architecture, CPCU1/2 pilot
+Phase 2 (Months 5-10): Fixed-Price - CPCU1, CPCU2, CPCU3 delivery (with 60% buffer)
+Phase 3 (Months 11+): Fixed-Price - LOTs B2-B7 once defined
+```
+
+### RACI Matrix Critical Gaps
+
+**Must Clarify Before Proposal:**
+
+| Responsibility Area | Current Gap | Impact | Priority |
+|--------------------|-------------|--------|----------|
+| **Test Data Provision** | Who provides production-like test data? | Cannot estimate testing effort without knowing data availability | **CRITICAL** |
+| **UAT Sign-Off Authority** | Who has final approval for go-live? | Delays if approval chain unclear | **CRITICAL** |
+| **Integration Ownership** | Vendor builds interfaces or Ethniki IT provides APIs? | Effort estimation depends on integration model | **CRITICAL** |
+| **Production Support Model** | Vendor 24/7, Ethniki IT, or hybrid? | Support cost varies 3x between models | **HIGH** |
+| **Data Quality Validation** | Vendor validates IDP accuracy or Ethniki business validation? | Acceptance criteria unclear | **HIGH** |
+| **End-User Training** | Vendor creates content or Ethniki creates with vendor support? | Training scope undefined | **MEDIUM** |
+| **Multi-Vendor Coordination** | If LOT A and LOTs B are different vendors, who coordinates? | Program complexity increases significantly | **HIGH** |
+
+**Proposed RACI Workshop:**
+- **Timing:** Week 1-2 after contract award
+- **Duration:** 1-2 days
+- **Participants:** Ethniki program manager, IT leads, business owners, vendor delivery lead
+- **Deliverable:** Documented RACI matrix for all LOTs
+
+### Business Analyst (BA) Availability & Capability
+
+| BA Requirement | Current Gap | Risk if Not Clarified |
+|---------------|-------------|----------------------|
+| **BA Assignment** | Is dedicated BA assigned per LOT? | Vendor assumes BA availability; delays if shared resource | **CRITICAL** |
+| **BA Time Commitment** | Full-time, 50%, or ad-hoc? | Timeline feasibility depends on BA availability | **CRITICAL** |
+| **BA AI/IDP Experience** | Is BA new to AI or experienced? | Knowledge transfer effort varies significantly | **HIGH** |
+| **BA Domain Expertise** | Does underwriting BA support CPCU1/3? Claims BA for mailroom? | Mismatched BA slows requirements validation | **HIGH** |
+| **BA Decision Authority** | Can BA approve requirements or escalation needed? | Slow decision-making if BA is advisory only | **HIGH** |
+| **BA Continuity** | Same BA for requirements, UAT, and post-go-live? | Knowledge loss if different individuals | **MEDIUM** |
+
+**Recommendation:** If Ethniki cannot commit full-time BA, vendor should include BA services in scope (T&M basis).
+
+### Functional vs. Non-Functional Requirements (NFR) Gaps
+
+**Functional Requirements Gaps:**
+- Detailed workflows beyond RFP use case descriptions
+- Business rules for validation (e.g., "reject if confidence < 90%")
+- Exception handling procedures (e.g., "escalate to underwriter if risk score > X")
+- Integration data flows (what data moves between systems, when, format)
+
+**Non-Functional Requirements Gaps:**
+| NFR Category | Current Status | Must Define Before Proposal |
+|-------------|----------------|----------------------------|
+| **Performance** | "Real-time" mentioned but not quantified | Latency targets: < 2 sec, < 5 sec, < 30 sec? Throughput: docs/hour? |
+| **Accuracy** | Not specified | OCR: 95%? Extraction: 98%? Classification: 90%? Penalty if not met? |
+| **Availability** | Not specified | 99.9% uptime? Maintenance windows? Downtime allowance? |
+| **Scalability** | Document volumes stated | Expected 3-year growth? Peak load (e.g., underwriting renewal season)? |
+| **Security** | GDPR/DORA mentioned | Encryption: TLS 1.3? At-rest AES-256? MFA required? Audit log retention? |
+
+**Recommendation:** Include NFR definition as T&M workstream in Phase 1 (2-3 weeks).
+
+### Timeline Feasibility Assessment (360-Degree View)
+
+**CPCU1: Geocoding (Stated: 1 month)**
+
+| Phase | Estimated Duration | Dependencies | Risk |
+|-------|-------------------|--------------|------|
+| Requirements & Design | 1 week | GEOL GIS API access, address data format | MEDIUM |
+| Development | 2 weeks | Geocoding API selection/licensing | LOW |
+| Testing & UAT | 1 week | 3K backlog contracts for testing | MEDIUM |
+| **Total (No Buffer)** | **4 weeks** | | |
+| **With 60% Buffer** | **6-7 weeks** | | |
+
+**Assessment:** 1 month is **aggressive** but achievable if dedicated team and GEOL API is accessible. Recommend **7 weeks** for fixed-price.
+
+**CPCU2: Mailroom (Stated: 3 months)**
+
+| Phase | Estimated Duration | Dependencies | Risk |
+|-------|-------------------|--------------|------|
+| Requirements & Process Mapping | 2 weeks | Email system access, routing rules | MEDIUM |
+| Greek NLP Model Setup | 3 weeks | Greek training data, model selection | **HIGH** |
+| Classification Development | 4 weeks | 5K email sample for training | MEDIUM |
+| Routing Logic & Integration | 3 weeks | System integration APIs | HIGH |
+| Testing & UAT | 3 weeks | Production-like test data | MEDIUM |
+| Go-Live Support | 1 week | | LOW |
+| **Total (No Buffer)** | **16 weeks (4 months)** | | |
+| **With 60% Buffer** | **25 weeks (6 months)** | | |
+
+**Assessment:** 3 months is **not feasible** for 5K emails/day with Greek NLP. Recommend **5-6 months** minimum.
+
+**CPCU3: Pricing Automation (Stated: 3 months)**
+
+| Phase | Estimated Duration | Dependencies | Risk |
+|-------|-------------------|--------------|------|
+| Requirements & Process Mapping | 2 weeks | Underwriting SME, pricing rules | HIGH |
+| IDP Setup (Form Extraction) | 3 weeks | Document samples, field mapping | MEDIUM |
+| Integration with 9+ Systems | 6 weeks | API access, data mapping | **HIGH** |
+| Pricing Logic Development | 3 weeks | Business rules, validation | MEDIUM |
+| Testing & UAT | 3 weeks | Production data, pricing validation | HIGH |
+| Go-Live Support | 1 week | | LOW |
+| **Total (No Buffer)** | **18 weeks (4.5 months)** | | |
+| **With 60% Buffer** | **29 weeks (7 months)** | | |
+
+**Assessment:** 3 months is **significantly understated** given 9+ system integration. Recommend **6-7 months** for fixed-price.
+
+**Overall Timeline Recommendation:**
+- **If T&M:** Use stated timelines as targets; flex based on actual complexity discovered
+- **If Fixed-Price:** Apply 60% buffer to all timelines; clearly scope exclusions (e.g., "assumes API access within 2 weeks")
+- **If Hybrid:** T&M for Phase 1 (discovery, LOT A); fixed-price with buffer for Phase 2 (use cases)
+
+---
+
+## Updated Summary: Most Critical Gaps (Including Step 12)
+
+### Must Have Before Proposal Submission:
+1. **LOT A Technology Stack** - Cannot design or price without knowing required components
+2. **LOT B2-B7 Definitions** - Cannot bid on undefined LOTs
+3. **Deployment Model & Data Residency** - Fundamental architecture decision
+4. **Timeline & Budget Range** - Essential for solution scoping
+5. **Proposal Due Date** - Need to know deadline
+6. **Commercial Model Preference** - T&M vs. Fixed-Price decision (Step 12)
+7. **RACI Matrix for Critical Responsibilities** - Test data, UAT approval, integration ownership (Step 12)
+8. **BA Availability & Experience** - Timeline feasibility depends on BA support (Step 12)
+
+### Should Have for Competitive Proposal:
+1. Integration details for existing systems
+2. Volume and performance requirements per use case
+3. Evaluation criteria and weighting
+4. Greek language processing expectations
+5. Pilot/POC phase expectations
+6. **Functional/Non-Functional Requirements** - Beyond RFP high-level descriptions (Step 12)
+7. **60% Timeline Buffer Acceptability** - For fixed-price risk management (Step 12)
+
+### Nice to Have for Risk Management:
+1. Existing vendor relationships and preferences
+2. Governance and decision-making structure
+3. IP and licensing model details
+4. Compliance validation process
+5. Exit strategy requirements

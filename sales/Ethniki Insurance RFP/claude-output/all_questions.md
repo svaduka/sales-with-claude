@@ -360,6 +360,134 @@
 
 ---
 
+# 4. STEP 12: TIMELINE & PROJECT MANAGEMENT CONSIDERATIONS (Added 2026-04-14)
+
+## Timeline Feasibility Assessment Questions
+
+| Question ID | Question | Purpose | Priority |
+|-------------|----------|---------|----------|
+| TIME-001 | Do the stated timelines (CPCU1: 1 month, CPCU2/3: 3 months) include all phases: analysis, development, testing, UAT, training, and go-live support? | Timeline scope clarity | CRITICAL |
+| TIME-002 | What is the assumed team composition and availability for these timelines? (full-time dedicated vs. part-time) | Resource planning | CRITICAL |
+| TIME-003 | Are timelines based on sequential delivery or assumes parallel work streams? | Delivery approach | HIGH |
+| TIME-004 | What are the critical path dependencies between LOT A delivery and LOT B use cases? | Dependency mapping | CRITICAL |
+| TIME-005 | Is a pilot/POC phase included in the stated timelines or separate? | Phase definition | HIGH |
+| TIME-006 | What is the expected UAT duration per use case? | Testing timeline | HIGH |
+| TIME-007 | What are the go-live windows/blackout dates we should be aware of? (e.g., insurance renewal periods, year-end close) | Schedule constraints | HIGH |
+| TIME-008 | What buffer or contingency is acceptable in timeline proposals for unforeseen issues? | Risk buffer | HIGH |
+
+## Fixed-Scope vs. Time & Materials (T&M) Questions
+
+| Question ID | Question | Purpose | Priority |
+|-------------|----------|---------|----------|
+| COMM-001 | Is the preferred contract model fixed-price or Time & Materials (T&M)? | Commercial model | CRITICAL |
+| COMM-002 | If fixed-price is required, what contingency buffer percentage is acceptable? (industry standard: 40-60% for AI/IDP projects) | Risk allocation | CRITICAL |
+| COMM-003 | Given undefined LOTs B2-B7, would a phased approach be acceptable: T&M for LOT A + defined use cases, with fixed-price for subsequent LOTs once scope is clear? | Hybrid model | HIGH |
+| COMM-004 | What is the approach for handling scope changes under fixed-price model? (change order process, pricing adjustment) | Change management | HIGH |
+| COMM-005 | Is there precedent for T&M contracts at Ethniki for innovation/AI projects with uncertainty? | Commercial flexibility | MEDIUM |
+
+## RACI Matrix & Responsibility Clarification Questions
+
+| Question ID | Question | Purpose | Priority |
+|-------------|----------|---------|----------|
+| RACI-001 | Who is Responsible for providing test data for each use case? (Vendor, Ethniki IT, Business Units) | Testing responsibility | HIGH |
+| RACI-002 | Who is Accountable for UAT sign-off and go-live approval? (business owners, IT, compliance) | Approval authority | CRITICAL |
+| RACI-003 | Who must be Consulted for technical design decisions? (architecture team, security, compliance) | Stakeholder engagement | HIGH |
+| RACI-004 | Who should be Informed at each milestone? (steering committee, department heads, end users) | Communication plan | MEDIUM |
+| RACI-005 | Is Ethniki Responsible for integration with existing 9+ systems or is this vendor scope? | Integration ownership | CRITICAL |
+| RACI-006 | Who provides production support post-go-live: vendor, Ethniki IT, or hybrid model? | Support model | HIGH |
+| RACI-007 | Who owns data quality validation: vendor's IDP accuracy or Ethniki's business validation? | Quality ownership | HIGH |
+| RACI-008 | Who is Responsible for end-user training content creation? (vendor creates, Ethniki reviews; or Ethniki creates with vendor support) | Training ownership | MEDIUM |
+| RACI-009 | Who manages vendor coordination if multiple vendors win different LOTs? | Program coordination | HIGH |
+| RACI-010 | Who is Accountable for regulatory compliance validation? (vendor designs, Ethniki validates; or external auditor) | Compliance ownership | HIGH |
+
+## Business Analyst (BA) Availability & Experience Questions
+
+| Question ID | Question | Purpose | Priority |
+|-------------|----------|---------|----------|
+| BA-001 | Will Ethniki assign a dedicated Business Analyst (BA) to each LOT/use case? | BA availability | CRITICAL |
+| BA-002 | What is the BA's expected time commitment? (full-time dedicated, 50% allocation, ad-hoc availability) | Resource planning | CRITICAL |
+| BA-003 | What is the BA's experience level with AI/IDP/automation projects? (expert, intermediate, new to AI) | Knowledge transfer needs | HIGH |
+| BA-004 | Does the BA have domain expertise in the specific line of business? (e.g., underwriting BA for CPCU1/3, claims BA for mailroom) | Domain alignment | HIGH |
+| BA-005 | Will the same BA support requirements, UAT, and post-go-live support, or different individuals? | Continuity planning | MEDIUM |
+| BA-006 | What is the BA's decision-making authority? (can approve requirements changes, escalation needed, advisory only) | Governance clarity | HIGH |
+| BA-007 | Will the BA be available for daily stand-ups, or weekly checkpoint meetings only? | Collaboration model | MEDIUM |
+| BA-008 | Does Ethniki expect the vendor to provide BA services or supplement Ethniki's BA capacity? | Service scope | HIGH |
+
+## Functional vs. Non-Functional Requirements Definition Questions
+
+| Question ID | Question | Purpose | Priority |
+|-------------|----------|---------|----------|
+| NFR-001 | What are the **functional requirements** per use case beyond the RFP? (detailed workflows, business rules, validation logic) | Functional clarity | HIGH |
+| NFR-002 | What are the **performance requirements**? (document processing latency, throughput, concurrent users) | Performance targets | HIGH |
+| NFR-003 | What are the **accuracy requirements**? (e.g., OCR accuracy 95%, extraction accuracy 98%, classification precision 90%) | Quality metrics | CRITICAL |
+| NFR-004 | What are the **availability requirements**? (uptime SLA: 99.9%, 99.5%; maintenance windows) | Availability targets | HIGH |
+| NFR-005 | What are the **scalability requirements**? (expected volume growth over 3 years, peak load handling) | Scalability planning | MEDIUM |
+| NFR-006 | What are the **security requirements** beyond GDPR/EU AI Act? (encryption standards, authentication methods, audit logging) | Security definition | HIGH |
+| NFR-007 | What are the **usability requirements**? (user training time target, clicks-to-complete, mobile access) | User experience | MEDIUM |
+| NFR-008 | What are the **compliance requirements**? (audit trail retention, regulatory reporting, explainability level) | Compliance definition | HIGH |
+| NFR-009 | What are the **maintainability requirements**? (documentation standards, code quality, knowledge transfer depth) | Maintenance planning | MEDIUM |
+| NFR-010 | What are the **interoperability requirements**? (API standards, data exchange formats, integration protocols) | Integration standards | HIGH |
+
+---
+
+## Updated Question Summary (Including Step 12)
+
+### By Category:
+- **Capability-Based:** 50 questions
+- **SDLC-Based:** 48 questions
+- **Domain-Specific:** 92 questions
+- **Step 12 (Timeline & PM):** 46 questions
+  - Timeline Feasibility: 8
+  - Commercial Model (T&M vs Fixed): 5
+  - RACI Matrix: 10
+  - BA Availability: 8
+  - Functional/Non-Functional Requirements: 10
+  - Project Management (existing): 5
+
+**Total Questions: 236** (previously 190)
+
+### By Priority (Updated):
+- **CRITICAL:** 35 questions (+13 from Step 12)
+- **HIGH:** 130 questions (+29 from Step 12)
+- **MEDIUM:** 66 questions (+4 from Step 12)
+- **LOW:** 15 questions (unchanged)
+
+---
+
+## Timeline Buffer Analysis (Step 12)
+
+### Fixed-Price Timeline Recommendations with 60% Buffer
+
+Based on industry standards for AI/IDP projects with unknowns (60% contingency):
+
+| Use Case | Stated Timeline | 60% Buffer | Recommended Timeline | Rationale |
+|----------|----------------|------------|---------------------|-----------|
+| **CPCU1: Geocoding** | 1 month | +18 days | **7 weeks** | Integration with GEOL GIS, 3K backlog clearing, address parsing accuracy |
+| **CPCU2: Mailroom** | 3 months | +54 days | **5 months** | 5K emails/day, Greek NLP, classification model training, routing logic |
+| **CPCU3: Pricing** | 3 months | +54 days | **5 months** | 9+ system integration, pricing logic complexity, underwriting validation |
+| **CPCU4: Tender Intelligence** | Not stated | N/A | **4-5 months** (estimated) | Greek tender PDF extraction, relevancy scoring, platform integration |
+| **CPCU5: Contract Generation** | Not stated | N/A | **3-4 months** (estimated) | Template automation, document assembly, workflow integration |
+| **LOT A: Control Plane** | Not stated | N/A | **6-8 months** (estimated) | RAG architecture, multi-vendor support, governance framework, compliance |
+
+### T&M vs. Fixed-Price Recommendation
+
+**Strong Recommendation: Time & Materials (T&M) Approach**
+
+**Rationale:**
+1. **Undefined Scope:** LOTs B2-B7 are not defined; cannot price unknowns
+2. **Integration Uncertainty:** 9+ system integration details unknown; API availability unclear
+3. **AI/IDP Complexity:** Document processing accuracy depends on document quality (not fully assessed)
+4. **Greek Language Risk:** Greek NLP/OCR maturity uncertain; may require model training/fine-tuning
+5. **Regulatory Evolution:** EU AI Act implementation details still emerging
+6. **Multi-Vendor Coordination:** If LOT A and LOTs B are different vendors, coordination effort unpredictable
+
+**Alternative: Hybrid Model**
+- **Phase 1 (Discovery & LOT A):** T&M for 3-4 months
+- **Phase 2 (Defined Use Cases):** Fixed-price for CPCU1, CPCU2, CPCU3 after discovery
+- **Phase 3 (Future LOTs):** Fixed-price for LOTs B2-B7 once defined
+
+---
+
 ## Next Steps
 
 1. **Review & Prioritize:** Ethniki to review questions and prioritize responses
@@ -367,3 +495,6 @@
 3. **Document Responses:** Capture answers in structured format
 4. **Update Proposal:** Refine proposal based on answers
 5. **Risk Assessment:** Update risk register based on unresolved questions
+6. **Timeline Validation:** Validate proposed timelines with Ethniki's expectations and constraints (Step 12)
+7. **RACI Workshop:** Conduct RACI workshop with Ethniki to define responsibilities (Step 12)
+8. **Commercial Model Discussion:** Align on T&M vs. fixed-price approach before proposal submission (Step 12)
