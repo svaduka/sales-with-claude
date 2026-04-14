@@ -441,6 +441,125 @@ All documents processed successfully with no external dependencies (no poppler r
 
 ---
 
+## Lev's Pre-Sales Review (Added 2026-04-14 Post-Meeting)
+
+**CRITICAL UPDATE:** EPAM Pre-Sales Lead (Lev) reviewed Claude's 236-question analysis.
+
+### Lev's Key Guidance:
+
+**"Questions must impact cost, duration, team composition for the proposal - defer delivery details"**
+
+### Coverage Analysis: What Lev Covered vs. Missing
+
+| Category | Lev Covered | Not Covered | Total | Coverage |
+|----------|-------------|-------------|-------|----------|
+| **Technical (Architecture, AI, Integration, Compliance)** | 15 questions | 0 | 15 | 100% ✅ |
+| **Project/PM (Scope, RACI, BA, Commercial)** | 0 questions | 10 | 10 | 0% 🔴 |
+| **TOTAL Pre-Sales Critical Questions** | **15** | **10** | **25** | **60%** |
+
+### What Lev's Meeting Covered (15 Questions):
+
+✅ **Architecture & Infrastructure (6):**
+1. AWS architecture pattern (serverless vs containers)
+2. Scalability metrics (concurrency, RPS, volumes)
+3. Multi-tenancy requirements
+4. DR requirements (RTO/RPO)
+5. Integration approach for 9+ systems
+6. AWS region selection (Frankfurt vs Milan)
+
+✅ **AI/ML & Data Processing (4):**
+7. AWS Bedrock model approval
+8. Document processing volumes
+9. Document formats and quality
+10. Accuracy requirements
+
+✅ **Integration & Systems (3):**
+11. Nine systems list and details
+12. Integration protocols and auth
+13. Data exchange volumes
+
+✅ **Compliance & Security (2):**
+14. Compliance frameworks (GDPR, EU AI Act, DORA)
+15. Data residency constraints
+
+### What Lev Did NOT Cover (10 Critical Questions):
+
+🔴 **Project Scope & Governance (5):**
+1. LOT B2-B7 scope definition (cannot estimate undefined work)
+2. Proposal submission deadline
+3. Budget range (shapes solution scope)
+4. Commercial model (T&M vs Fixed-Price)
+5. Q&A window timing
+
+🔴 **Team & Responsibilities (5):**
+6. Test data provision (who provides?)
+7. UAT sign-off accountability
+8. Integration ownership (Ethniki IT or vendor?)
+9. BA assignment and availability (impacts timeline 25-50%)
+10. BA time commitment and experience
+
+### Impact Assessment:
+
+| Missing Question Category | Estimation Impact | Example |
+|---------------------------|------------------|---------|
+| **LOT B2-B7 undefined** | Cannot price 70% of program | 7 more use cases → 2-3x effort |
+| **BA availability** | Timeline variance: 25-50% | No BA: 3mo → 4.5-5mo |
+| **Integration ownership** | Effort variance: 50-100% | Vendor does integration: +4-6mo |
+| **Commercial model** | Risk allocation | Fixed-price needs 60% buffer |
+| **Budget range** | Solution scoping | €500K ≠ €2M approach |
+
+### Filtering: Claude's 236 → Pre-Sales 25 Questions
+
+**How Questions Were Filtered:**
+
+| Claude's Categories | Original Count | Pre-Sales Relevant | Filtered |
+|---------------------|----------------|-------------------|----------|
+| Capability-Based | 50 | Partially | 10 |
+| SDLC-Based | 48 | No (delivery phase) | 0 |
+| Domain-Specific | 92 | Partially | 5 |
+| Step 12 (Timeline & PM) | 46 | Yes | 10 |
+| **TOTAL** | **236** | | **25** |
+
+**Deferred Questions (211):** UAT details, deployment procedures, support model, detailed NFRs, training scope, change management, domain workflows
+
+**Rationale:** Important for delivery but **do not change cost/duration/team** for proposal
+
+### Lev's Validation of Claude's Analysis:
+
+| Claude's Finding | Lev's Validation | Status |
+|-----------------|------------------|--------|
+| AWS is mandated | ✅ Confirmed - project is AWS-funded | VALIDATED |
+| Timeline "1 month first lot" aggressive | ✅ EPAM will propose alternative if needed | VALIDATED |
+| Nine systems integration is critical | ✅ Largest timeline variable | VALIDATED |
+| Data quality affects effort | ✅ Preprocessing impacts timeline | VALIDATED |
+| Compliance scope unclear | ✅ Need specific frameworks | VALIDATED |
+| Step 12 timeline buffer (60%) | ⚠️ Not explicitly discussed | PENDING |
+| RACI critical gaps | ⚠️ Not discussed in meeting | PENDING |
+| BA availability critical | ⚠️ Not discussed in meeting | PENDING |
+
+### Recommendations from Three-Way Comparison:
+
+**Immediate (Next 2 Business Days):**
+1. ✅ Send Lev's 15 technical questions to client
+2. 🔴 Escalate 10 uncovered questions to Lev for review
+3. ⚠️ Prepare alternative timeline proposal (use Claude's Step 12 analysis)
+
+**Follow-Up (Within 1 Week):**
+4. Plan RACI workshop for post-contract award
+5. Document T&M recommendation in proposal
+6. Prepare capability match story (82% with AWS)
+
+### Key Insight: Scope Mismatch Identified
+
+**Claude's Approach:** Comprehensive 236 questions for full delivery lifecycle
+**Lev's Need:** ~25 estimation-impacting questions for pre-sales proposal only
+
+**Resolution:** Filter Claude's comprehensive analysis → Pre-sales critical subset
+
+**Value Preserved:** All of Lev's priorities ARE covered in Claude's 236 questions - just needed filtering.
+
+---
+
 ## Conclusion
 
 **Analysis Status:** ✅ **COMPLETE**

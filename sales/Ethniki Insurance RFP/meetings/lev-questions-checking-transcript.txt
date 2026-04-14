@@ -1,0 +1,74 @@
+00:00:00 Speaker 1
+Awesome. You just connect. Okay, give me a second, just second. I want to wear my top. Oh, I'll just give me a second.
+00:00:12 Speaker 2
+Take your time. Perfect.
+00:00:31 Speaker 1
+Okay. I'm all set. Okay. Let me start looking into the window.
+00:00:41 Speaker 2
+Yep, and just a reminder, please.
+00:00:51 Speaker 1
+Okay, I didn't got a chance to download the raw file or okay perfect. So from an architectural side, right So there are different questions out there, right What is the preferred cloud provider So I mention it as AWS. So with that in good. Sorry, you are saying something.
+00:01:21 Speaker 2
+No, no, I am looking at a solution.
+00:01:23 Speaker 1
+Okay Right so on architecture, So, what is the target AWS architecture pattern for enterprise ARK control panel? So, Whether it's a serverless or they are requiring for containers, or what are the different types of solutions they are looking at. Right? They mentioned scalability, right? So but uh they didn't mention the exact scalability point of view. So like uh so they are looking for concurrent users. How many requests are coming per second. And what is the document volume between multiple vendors, right? So, that is also one of the questions we need to check before we submit this one. And they mentioned that there are multiple vendors are coming into the picture, right? So and is there any multi - tenancy approaches required? Or it's a single tenant? They are looking at.
+00:02:20 Speaker 1
+Like only for ethica or what. So we want to look into that. And they haven't mentioned anything related to disaster recovery mechanism. So are they looking at because this is these are related to the document yeah.
+00:02:36 Speaker 2
+And and yeah, I totally uh understand my question is will this answer impact the estimates Estimates?
+00:02:48 Speaker 2
+Yes, Because the thing is that we are on pre- sales stage. Correct. And the questions that we ask must be the ones that actually impact our proposal. There is a whole class of questions that are very important for actual development delivery, but if it's all the same team composition, all the same and estimates, we don't really care at this very stage. So just cut this.
+00:03:16 Speaker 1
+Perfect. I totally agree with that. So, I so that is the question. So this is just an RFP, right? So we are going to submit an RFP to the customer, right? So whenever we are doing it, at least minimum things are required, right? In order to understand our timeline and everything. We need to know some of them. Yeah. So the.
+00:03:40 Speaker 2
+Idea is that we sent over our proposal, And we propose like cost and duration and team composition and all that, And the metrics that actually impact these things is something that we need to clarify. And if something has no impact on on those matters, but is important for delivery, We just keep it, keep it for the future. For the case of us will. Yeah, that's just equality here.
+00:04:06 Speaker 1
+So you are primarily looking into the timeline management. So for example they mentioned that uh the first, First lot, they want to deliver it in the one month. So you want to check on that delivery timelines or what? No,
+00:04:23 Speaker 2
+Not necessarily because they have this delivery approach something document where they have this resource plan. I am not qualified to evaluate this resource plan. Maybe, it's not realistic. And what EPAM is going to do is actually say, okay, here is our. Resource plan, here's our project plan, here is our list of milestones. That's that's here is all the stuff that we are ready to propose. And lucky you, it's exactly the same that you had in your attachment number three. Or, we will say there is no bloody way to do it in this timeframe. That's why we propose our own timeframe and you're more than welcome to discuss with us why your timeframe is not realistic and ours is realistic.
+00:05:09 Speaker 2
+And. The thing is that the questions that we are asking at this point is something that needs to be helping us to estimate, to come up with a proposal, To come up with the architectural approach that we foresee at the stage of the proposal preparation. So it's not like asking questions saying, "Okay, guys," I mean it's obviously not from data or database perspective like. Okay, What should be like the the shape of the buttons on the on the interface? It makes no sense for us to learn that because it's the same delivery, the same time for development. Either around or or circle or like triangular buttons doesn't matter. And, and we need to clarify this at the moment when we actually go into development when we.
+00:06:01 Speaker 2
+Design those, I don't know, like.
+00:06:03 Speaker 1
+Got it. I got that.
+00:06:05 Speaker 2
+Yeah, yeah, yeah. So, that's just just because the questions that you had and I looked to them really briefly. They They look great from the first look, but just make sure that we are not asking something that will result into no impact on our estimates That's. The just one thing I wanted to share.
+00:06:22 Speaker 1
+Oh sure Sure.
+00:06:23 Speaker 2
+Step up on that Yes.
+00:06:26 Speaker 1
+Yes totally got you so I articulated. Some of these integration questions and there are clarification is also required. So, I created this okay. So, they haven't given on anything on the infrastructure. This is just a compliance perspective and AWS infra sites perspective. Yeah,
+00:06:51 Speaker 2
+Like like like the question you're asking which Bedrock models are acceptable? So what will how will it, Backed our estimates if they will say, Titan is acceptable, Lama is acceptable, Mistral and Claude are not. Will it increase or decrease the team composition? Will it decrease or increase the like. What what are we? What are we learning from from the answer for the sake of coming with a proposal.
+00:07:18 Speaker 1
+Correct. If it is only Bedrock one right, the timeline will be straight right so the timeline is a different one. But if it is an open search or anything external, one right we need to think about how the integration will work for us. So that integration we need to establish. So that will impact our project timeline. Uh huh, so okay, that is what I am thinking of. And region wise they mention EU region. So, there are some places where I see that in Abu Dhabi, they are whenever they say that.
+00:07:53 Speaker 1
+Within the region, they are only looking for their own region, so they don't access.
+00:08:00 Speaker 2
+Yeah, and luckily that's the issue of delivery management. So you as a solution, architect should not be bothered with matters like can we hire from Romania? Can we hire from Greece? Can we hire from Cyprus? I mean that's something that's that's we have the delivery competence for. And they should ask all those peculiar questions related to resources. That's what we expect. That's a great question, but not question.
+00:08:27 Speaker 1
+No problem, no problem. You have every right. I just started looking into every aspect of it, so yeah, I got to know what I need to ask for this particularly So. This is before RFP. So project timelines So, we need to ask on the project timelines Okay What is okay. So.
+00:08:49 Speaker 1
+The questions need to ask in such a way that, that will impact our project timelines. So that or.
+00:08:58 Speaker 2
+Team composition.
+00:09:00 Speaker 1
+Right yeah team composition, how the team composition should look like. Okay, I do have some. So I did analysis on this one okay so, I mentioned uh. Okay.
+00:09:19 Speaker 1
+So I just read that one okay. They they're all there is clarification topics I I have created my clarification topics, okay.
+00:09:41 Speaker 1
+Okay. Yes, so they mentioned nine systems also right. So, what are those nine systems? So, they haven't mentioned anything on that nine systems. How the integration model works They're also they haven't mentioned anything on that. So that will give impact our timelines too. That is also one question. I can have and data quality also And. Uh I also mention I. Also, some I will also summarize the questions on uh data quality. And one more point is I understand that okay, They want to.
+00:10:15 Speaker 1
+Document right, they want to extract the document. So, uh, for that what is the data quality things? Right. So we don't know anything on that. So some questions topic related to that. So yeah, I will provide you that details only particularly two RFP. I will provide this one. Okay? Okay. Yeah and they're also asking us compliance, specific also GDPR compliance and AI compliance and EU compliance also. So. So we don't know about those I mean, we know GDPR, but AI is different for different region. Different vendor side, right? And EU is particular to the EU. So what are the compliance? We don't know anything particular to the ethenic. So that is also one of the thing I have question. But I have created in another document, actually, where is that I created this questions? Okay, Okay.
+00:11:12 Speaker 1
+I will send that.
+00:11:15 Speaker 2
+Yeah, awesome yeah. So just uh uh a little bit yeah, doing great. Just uh keep it in mind, my my guidance on that. And uh yeah,
+00:11:22 Speaker 1
+Just and one more point is there is they also mentioned one thing. They mentioned a lot here, time like lot A and lot B B one to seven. So there are multiple vendors can also work inside that. So how that coordination will happen. So if if we are going to get that, right, soum yeah. That, that is also one of the question I got it. But uh, yeah I have to fill up. I have read all these documents but uh, I thought you will be sign off. So, I want to know that okay my direction is correct or not. Okay, I will generate this things also.
+00:11:55 Speaker 2
+Okay, yeah, go ahead, shoot your shot. And yeah, many, many, thanks for those sure. Thank.
+00:12:01 Speaker 1
+You thank you Liam.
