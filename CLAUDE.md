@@ -47,6 +47,21 @@ sales/
     └── ...
 ```
 
+## Python Requirements
+
+For document analysis, install these packages:
+
+```bash
+pip install pypdf python-docx openpyxl pandas
+```
+
+These enable reading PDF, Word, and Excel files during sales analysis.
+
+- **pypdf**: Read PDF files
+- **python-docx**: Read Word documents (.docx)
+- **openpyxl**: Read Excel files (.xlsx)
+- **pandas**: Data manipulation for Excel files
+
 ## Sales Project Workflow
 
 ### 1. Starting a New Sales Project
