@@ -27,6 +27,11 @@ This command enables Claude to analyze available sales projects, guide the user 
   - Data models
   - Requirements
 
+### Pre-Analysis Requirement
+- During analysis, before reading the input, make sure all the `.md` files in `sales/<project>/claude-output/` are read, if already exist
+- Use this as prior context to avoid duplicate work and to understand previous analysis
+- Do not assume completeness; validate against input again
+
 ### Output
 Provide structured analysis:
 | Category | Details |
@@ -116,7 +121,7 @@ Provide structured analysis:
 
 ## Step 9: Output File Generation
 All outputs must be saved under:
-`sales/<project>/output/`
+`sales/<project>/claude-output/`
 
 ### Files to Generate
 - `project_analysis.md`
@@ -128,11 +133,29 @@ All outputs must be saved under:
 
 ---
 
-## Step 10: Execution Rules
+## Step 10: File Update Strategy
+
+**CRITICAL**: Update existing files, do NOT create duplicates.
+
+- If `claude-output/` already has analysis files from a prior run:
+  - Read existing files first for context
+  - Update existing files by appending new findings or merging new information
+  - Do not create `project_analysis_v2.md` or similar - update the original file
+  - Add dated sections (e.g., `## Updated Analysis (2026-04-14)`) when appending
+- If this is the first analysis:
+  - Create all files as specified
+- Preserve prior analysis context to avoid redundant work
+
+---
+
+## Step 11: Execution Rules
 - Always follow step-by-step execution
 - Do not skip steps
 - Ask user for project selection before proceeding
 - Ensure all outputs are structured and complete
+- Never modify files in `Input/` folder (read-only)
+- Only write to `claude-output/` folder
+- Update existing `claude-output/` files rather than creating duplicates
 
 ---
 
@@ -140,4 +163,6 @@ All outputs must be saved under:
 - Ignore irrelevant or advertisement content
 - Focus only on meaningful technical and business information
 - Maintain formal and structured output format
-- Treat all folder names, file names, and references (input/output) as case-insensitive
+- Treat all folder names, file names, and references (Input/input, claude-output/Claude-Output) as case-insensitive
+- `Input/` and `Output/` are read-only for Claude
+- `claude-output/` is the only folder Claude writes to
