@@ -273,17 +273,20 @@ For the identified domain (e.g., Data Ingestion, IDP, Insurance), validate compl
 
 ## Step 11: Execution Rules
 
+- **MANDATORY: Reference sources precisely**: EVERY gap, mismatch, and finding MUST cite:
+  - **Input source**: Document name, page number, section (e.g., "Technical Description.pdf, Page 12, Section 3.2")
+  - **Output source**: File name, section, line numbers (e.g., "proposal.md, Section 2.1, lines 45-52")
+  - **claude-output source**: File name, section (e.g., "project_analysis.md, Architecture section")
 - **Do not assume or invent missing information** - document only what's actually present in the three sources
 - **Clearly distinguish**:
-  - **Gaps**: Information present in Input or claude-output but missing from Output
-  - **Mismatches**: Contradictions between Input, claude-output, and Output
-  - **Inconsistencies**: Conflicting statements or assumptions within or across sources
+  - **Gaps**: Information present in Input or claude-output but missing from Output (cite sources for both)
+  - **Mismatches**: Contradictions between Input, claude-output, and Output (cite all three sources)
+  - **Inconsistencies**: Conflicting statements or assumptions within or across sources (cite conflicting sources)
 - **Keep answers crisp, clear, and in plain English**
 - **Always update existing files** in claude-output/, never create new versions (e.g., no `clarification_topics_v2.md`)
-- **Reference sources precisely**: Cite specific Input files (with page numbers if PDF), Output files, and claude-output sections
-- **Generate actionable questions**: Questions should be specific, answerable, and include context (why the question matters)
+- **Generate actionable questions**: Questions should be specific, answerable, include source references, and context (why the question matters)
 - **Preserve prior analysis**: Don't delete or overwrite prior work in claude-output/, append new findings
-- **Use comparison context**: Always frame questions with reference to the three-way comparison
+- **Use comparison context**: Always frame questions with reference to the three-way comparison WITH source citations
 - **Prioritize findings**: Mark gaps and mismatches as High/Medium/Low priority based on impact
 
 ---

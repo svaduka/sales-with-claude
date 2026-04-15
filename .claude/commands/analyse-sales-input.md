@@ -33,14 +33,16 @@ This command enables Claude to analyze available sales projects, guide the user 
 - Do not assume completeness; validate against input again
 
 ### Output
-Provide structured analysis:
-| Category | Details |
-|----------|--------|
-| Business Context | |
-| Technical Scope | |
-| Data Scope | |
-| Architecture | |
-| Dependencies | |
+Provide structured analysis **WITH SOURCE REFERENCES**:
+| Category | Details | Source Reference |
+|----------|---------|------------------|
+| Business Context | | [Document Name, Page X, Section Y] |
+| Technical Scope | | [Document Name, Page X, Section Y] |
+| Data Scope | | [Document Name, Page X, Section Y] |
+| Architecture | | [Document Name, Page X, Section Y] |
+| Dependencies | | [Document Name, Page X, Section Y] |
+
+**CRITICAL:** Every data point must include source reference (document name, page number, section)
 
 ---
 
@@ -60,12 +62,13 @@ Provide structured analysis:
 ## Step 4: Clarification Topics Generation
 - Identify missing or unclear areas
 - Generate clarification topics
+- **Document where information was searched but not found**
 
 ### Output
-| Topic | Missing Information | Reference Needed |
-|------|--------------------|------------------|
-| Data Source | Not defined | Source systems |
-| Security | Partial | RBAC/ABAC details |
+| Topic | Missing Information | Searched In (Source Reference) | Reference Needed |
+|------|--------------------|-------------------------------|------------------|
+| Data Source | Not defined | Technical Description.pdf (all pages), RFP Main Doc (reviewed) | Source systems |
+| Security | Partial | Technical Description.pdf, Page 15, Section 4.2 (mentions integration, no RBAC details) | RBAC/ABAC details |
 
 ---
 
@@ -152,10 +155,12 @@ All outputs must be saved under:
 - Always follow step-by-step execution
 - Do not skip steps
 - Ask user for project selection before proceeding
-- Ensure all outputs are structured and complete
+- **MANDATORY: Include source references** (document name, page number, section) for EVERY finding, requirement, and data point
+- Ensure all outputs are structured and complete with source references
 - Never modify files in `Input/` folder (read-only)
 - Only write to `claude-output/` folder
 - Update existing `claude-output/` files rather than creating duplicates
+- **Document where information was searched but not found** (e.g., "Searched: Technical Description.pdf all pages, RFP Main Doc - not specified")
 
 ---
 
